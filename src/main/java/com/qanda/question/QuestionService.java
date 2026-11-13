@@ -1,5 +1,7 @@
 package com.qanda.question;
 
+import java.util.Optional;
+import com.qanda.DataNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
@@ -15,4 +17,13 @@ public class QuestionService {
         return this.questionRepository.findAll();
     }
 
+    public Question getQuestion(Integer id){
+        Optional<Question> question = this.questionRepository.findById(id);
+        if(question.isPresent()){
+            return question.get();
+        }
+        else{
+            throw new DataNotFoundException("question not found");
+        }
+    }
 }
