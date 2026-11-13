@@ -1,8 +1,9 @@
-package com.qanda;
+package com.qanda.question;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.qanda.answer.Answer;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

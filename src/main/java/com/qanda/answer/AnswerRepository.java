@@ -1,4 +1,4 @@
-package com.qanda;
+package com.qanda.answer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

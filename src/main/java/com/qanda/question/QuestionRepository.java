@@ -1,4 +1,4 @@
-package com.qanda;
+package com.qanda.question;
 
 import java.util.List;
 
