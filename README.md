@@ -57,3 +57,9 @@
   - "속성을 필요로 하는 생성자가 롬복에 의해 자동으로 생성된다."
   - 보충: Getter는 getter만 만든다. 생성자는 RequiredArgsConstructor가 만들고, 대상은 final 필드다. final 필드는 값을 바꿀 수 없어서 Setter를 붙여도 setter가 생기지 않는다.
 - README 형식 변경: 기록 문체를 "~했다"로 바꾸고, 코드 표기를 줄여 말로 풀어 썼다.
+
+### 202-01 간단한 웹 프로그램 만들기, MainController 추가
+- [링크](https://github.com/SqueezeTheLemon/qanda/tree/202-01)
+- 작업: 교재 2-02에 따라 MainController를 만들고, /sbb 요청에 문자열을 그대로 응답하도록 했다.
+- 이유: URL 매핑과 컨트롤러의 역할 익히기
+- 결과: 실행 후 브라우저(`localhost:8080/sbb`)에 접속하여 index! 출력 확인 완료
