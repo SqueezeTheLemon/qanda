@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class QuestionController {
 
-    private final QuestionRepository questionRepository;
+    private final QuestionService questionService;
 
     @GetMapping("/question/list")
     public String list (Model model) { // 매개변수 Model : 객체가 자동으로 생성됨
-        List <Question> questionList = this.questionRepository.findAll();
+        List <Question> questionList = this.questionService.getList();
         model.addAttribute("questionList", questionList); // 전달받은 model 객체에 questionList 넣기
         return "question_list";
     }
+
 }
