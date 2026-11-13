@@ -2,7 +2,6 @@ package com.qanda;
 
 import java.time.LocalDateTime;
 
-import com.qanda.Question;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
