@@ -40,3 +40,9 @@
 - 작업: `build.gradle.kts`에서 `war` 플러그인과 `providedRuntime(...tomcat-runtime)`을 지웠어요. `ServletInitializer.java`도 삭제했어요.
 - 이유: 교재는 jar 패키징과 내장 톰캣을 써요. 외부 톰캣 배포용 설정은 필요 없어서 교재에 맞췄어요.
 - 결과: `./gradlew clean test bootJar`가 통과했고, `build/libs/qanda-0.0.1-SNAPSHOT.jar`가 생겼어요. jar 안에 내장 톰캣이 들어 있고, `java -jar`로 실행해서 `/hello` 응답을 확인했어요.
+
+### 104-01 스프링부트 도구 설치하기, Devtools 자동 재시작 확인
+- [링크](https://github.com/SqueezeTheLemon/qanda/tree/104-01)
+- 작업: 교재 1-04에 따라 `/hello` 응답을 `Hello sbb`로 바꾸고, Devtools 자동 재시작을 확인했어요. Devtools 의존성은 프로젝트 생성 때 이미 들어 있었어요.
+- 이유: 코드를 바꿀 때마다 서버를 직접 껐다 켜는 번거로움을 줄이기 위해서예요.
+- 결과: 서버를 켠 채로 다시 컴파일하니, 같은 프로세스에서 `restartedMain` 스레드가 0.5초 만에 애플리케이션을 다시 띄웠어요. 브라우저에서 `/hello`에 접속해 `Hello sbb`도 확인했어요.
