@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <th> 제목 </th>
+            <th> 작성일시 </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question: ${questionList}"> <!-- Model로 전달받은 질문목록 데이터 (questionList) - question으로 하나씩 읽어와서 각 상세정보 출력-->
+        <td th:text="${question.subject}"></td>
+        <td th:text="${question.createDate}"></td>
+    </tr>
+    </tbody>
+</table>

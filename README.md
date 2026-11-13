@@ -109,3 +109,16 @@
 - 작업: 교재 2-06에 따라 질문 관련 파일(엔티티, 리포지터리)은 question 패키지로, 답변 관련 파일은 answer 패키지로 옮겼다. Hello 관련 클래스와 MainController는 메인 패키지에 그대로 두었다.
 - 이유: 파일이 늘어나도 기능(도메인)별로 찾기 쉽게 하기 위해
 - 결과: 패키지 이동 후에도 테스트 통과 확인 완료
+
+### 207-01 질문 목록 만들기, QuestionController와 질문 목록 템플릿
+- [링크](https://github.com/SqueezeTheLemon/qanda/tree/207-01)
+- 작업: 교재 2-07에 따라 질문 목록 요청(/question/list)을 처리하는 QuestionController를 만들었다. 리포지터리로 전체 질문을 조회해 Model에 담아 넘기고, 타임리프 템플릿에서 표로 반복 출력했다. 리포지터리는 생성자 주입(RequiredArgsConstructor + final)으로 받았다.
+- 이유: DB의 질문 데이터를 웹 화면에 보여주기 위해
+- 결과: 실행 후 브라우저(`localhost:8080/question/list`)에서 질문 제목과 작성일시 표 출력 확인 완료
+- 주석 메모:
+  - Model 매개변수: "객체가 자동으로 생성됨"
+  - "전달받은 model 객체에 questionList 넣기"
+  - 템플릿 반복: "Model로 전달받은 질문목록 데이터(questionList)를 question으로 하나씩 읽어와서 각 상세정보 출력"
+- 질문:
+  - Q. 테스트를 돌렸더니 "Database may be already in use" 오류가 났다.
+    - A. 코드 문제가 아니다. 실행 중인 서버가 홈 폴더의 local 파일 DB를 잡고 있어서 테스트가 같은 DB를 열지 못했다. 서버를 끄고 다시 실행하니 통과했다.
